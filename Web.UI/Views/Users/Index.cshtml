@@ -1,0 +1,12 @@
+@model IEnumerable<XPShare.Domain.Users.User>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach(var user in Model)
+{
+    <div>@user.Name</div>
+}
+
