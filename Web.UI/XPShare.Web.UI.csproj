@@ -25,8 +25,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain\XPShare.Domain.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Users\" />
-  </ItemGroup>
 
 </Project>

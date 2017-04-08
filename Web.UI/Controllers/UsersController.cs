@@ -21,5 +21,18 @@ namespace XPShare.Web.UI.Controllers
             var users = _userRepository.GetAll();
             return View(users);
         }
+
+        public IActionResult Details(Guid id)
+        {
+            var user = _userRepository.Get(id);
+            return View(user);
+        }
+
+        public IActionResult Delete(Guid id)
+        {
+            _userRepository.Delete(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }

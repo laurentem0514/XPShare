@@ -1,0 +1,23 @@
+@model XPShare.Domain.Users.User
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+@if (Model != null)
+{
+    <div>
+        @Model.Name  <br />
+        @Model.Id
+    </div>
+    <a href="/Users/Delete/@Model.Id">Delete</a>
+}
+else
+{
+    <div>User Not Found</div>
+
+}
+
+
+<a href="/Users">Back</a>
