@@ -8,6 +8,6 @@
 @foreach(var user in Model)
 {
     <div>
-        <a href="/Users/Details/@user.Id">@user.Name</a>
+        <a asp-controller="Users" asp-action="Details" asp-route-id="@user.Id">@user.Name</a>
     </div>    
 }

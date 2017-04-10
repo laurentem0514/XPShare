@@ -11,7 +11,7 @@
         @Model.Name  <br />
         @Model.Id
     </div>
-    <a href="/Users/Delete/@Model.Id">Delete</a>
+    <a asp-controller="Users" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
 }
 else
 {
