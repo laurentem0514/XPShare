@@ -1,6 +1,7 @@
 @model XPShare.Domain.Users.User
 @{
-    ViewData["Title"] = "Details";
+    var name = Model?.Name ?? "Not Found";
+    ViewData["Title"] = $"Users - {name}";
 }
 
 <h2>Details</h2>
@@ -8,8 +9,7 @@
 @if (Model != null)
 {
     <div>
-        @Model.Name  <br />
-        @Model.Id
+        @name  <br />
     </div>
     <a asp-controller="Users" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
 }
@@ -20,4 +20,4 @@ else
 }
 
 
-<a href="/Users">Back</a>
+<a asp-controller="Users" asp-action="Index">Back</a>
