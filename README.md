@@ -1,4 +1,4 @@
 # XPShare
 
 
-![Alt text](ReadmeContent/XPShare.png?raw=true "XPShare Stacks")
+![Alt text](ReadmeContent/XPShareStacks.png?raw=true "XPShare Stacks")
