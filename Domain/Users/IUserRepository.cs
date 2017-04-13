@@ -27,6 +27,10 @@ namespace XPShare.Domain.Users
 
         public void Add(User user)
         {
+            if (user.Id == Guid.Empty)
+            {
+                user.Id = Guid.NewGuid();
+            }
             _users.Add(user);
         }
 

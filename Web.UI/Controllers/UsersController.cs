@@ -38,5 +38,19 @@ namespace XPShare.Web.UI.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet("create")]
+        public IActionResult CreateForm()
+        {
+            return View(new User());
+        }
+
+        [HttpPost("create")]
+        public IActionResult Create(User user)
+        {
+            _userRepository.Add(user);
+
+            return RedirectToAction("Details", new {id = user.Id });
+        }
     }
 }
