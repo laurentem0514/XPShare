@@ -23,6 +23,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DependencyInjection\XPShare.DependencyInjection.csproj" />
     <ProjectReference Include="..\Domain\XPShare.Domain.csproj" />
   </ItemGroup>
 

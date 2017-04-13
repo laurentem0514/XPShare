@@ -11,7 +11,7 @@
     <div>
         @name  <br />
     </div>
-    <a asp-controller="Users" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+    <a asp-controller="Users" asp-action="Delete" asp-route-id="@Model.Id" onclick="return confirm('Are you sure you want to delete the user?');">Delete</a>
 }
 else
 {

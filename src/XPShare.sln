@@ -3,14 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPShare.Web.UI", "Web.UI\XPShare.Web.UI.csproj", "{44D8C0E4-B2AB-48A4-BCA7-01A083C3A37E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPShare.Web.UI", "Web.UI\XPShare.Web.UI.csproj", "{44D8C0E4-B2AB-48A4-BCA7-01A083C3A37E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPShare.Domain", "Domain\XPShare.Domain.csproj", "{167C829B-32BC-4F03-95B9-90FE473116A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPShare.Domain", "Domain\XPShare.Domain.csproj", "{167C829B-32BC-4F03-95B9-90FE473116A2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{60070358-822C-43D1-840C-542056FBCAB7}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPShare.Domain.Stubs", "Domain.Stubs\XPShare.Domain.Stubs.csproj", "{BCE32B91-CB46-40A9-963B-47BE59616EC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPShare.DependencyInjection", "DependencyInjection\XPShare.DependencyInjection.csproj", "{B0399FA2-CF3D-43F7-B92F-92431C6AA508}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +25,14 @@ Global
 		{167C829B-32BC-4F03-95B9-90FE473116A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{167C829B-32BC-4F03-95B9-90FE473116A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{167C829B-32BC-4F03-95B9-90FE473116A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE32B91-CB46-40A9-963B-47BE59616EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE32B91-CB46-40A9-963B-47BE59616EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE32B91-CB46-40A9-963B-47BE59616EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE32B91-CB46-40A9-963B-47BE59616EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0399FA2-CF3D-43F7-B92F-92431C6AA508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0399FA2-CF3D-43F7-B92F-92431C6AA508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0399FA2-CF3D-43F7-B92F-92431C6AA508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0399FA2-CF3D-43F7-B92F-92431C6AA508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
