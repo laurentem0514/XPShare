@@ -1,10 +1,11 @@
 ﻿using System;
 
-namespace XPShare.Domain.Tags
+namespace XPShare.Domain.Projects
 {
-    public class Tag : IEntity
+    public class Project : IEntity
     {
         public Guid Id { get; set; }
+
         public string Name { get; set; }
     }
 }

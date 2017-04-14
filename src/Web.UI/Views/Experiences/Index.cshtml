@@ -1,0 +1,16 @@
+@model IEnumerable<XPShare.Domain.Experiences.Experience>
+    @{
+        ViewData["Title"] = "Experiences";
+    }
+
+    <h2>Index</h2>
+
+    @foreach (var experience in Model)
+    {
+        <div>
+            <a asp-controller="Experiences" asp-action="Details" asp-route-id="@experience.Id">@experience.Description</a>
+        </div>
+    }
+
+    <a asp-controller="Experiences" asp-action="CreateForm" class="btn btn-default">Add New Experience</a>
+
