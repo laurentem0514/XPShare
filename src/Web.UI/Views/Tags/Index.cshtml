@@ -1,0 +1,16 @@
+@model IEnumerable<XPShare.Domain.Tags.Tag>
+    @{
+        ViewData["Title"] = "Tags";
+    }
+
+    <h2>Index</h2>
+
+    @foreach (var tag in Model)
+    {
+        <div>
+            <a asp-controller="Tags" asp-action="Details" asp-route-id="@tag.Id">@tag.Name</a>
+        </div>
+    }
+
+    <a asp-controller="Tags" asp-action="CreateForm" class="btn btn-default">Add New Tag</a>
+

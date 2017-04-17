@@ -1,0 +1,23 @@
+@model XPShare.Domain.Projects.Project
+@{
+    var id = Model?.Id.ToString() ?? "Not Found";
+    ViewData["Title"] = $"Projects - {id}";
+}
+
+<h2>Details</h2>
+
+@if (Model != null)
+{
+    <div>
+        @Model.Name  <br />
+    </div>
+    <a asp-controller="Projects" asp-action="Delete" asp-route-id="@Model.Id" onclick="return confirm('Are you sure you want to delete the project?');">Delete</a>
+}
+else
+{
+    <div>Project Not Found</div>
+
+}
+
+
+<a asp-controller="Projects" asp-action="Index">Back</a>

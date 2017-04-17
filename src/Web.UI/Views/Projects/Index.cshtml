@@ -1,0 +1,16 @@
+@model IEnumerable<XPShare.Domain.Projects.Project>
+    @{
+        ViewData["Title"] = "Projects";
+    }
+
+    <h2>Index</h2>
+
+    @foreach (var project in Model)
+    {
+        <div>
+            <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id">@project.Name</a>
+        </div>
+    }
+
+    <a asp-controller="Projects" asp-action="CreateForm" class="btn btn-default">Add New Project</a>
+

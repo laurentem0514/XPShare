@@ -6,7 +6,7 @@ namespace XPShare.Domain.Stubs
 {
     public class StubRepository<T> : IRepository<T> where T : IEntity
     {
-        private List<T> _items = new List<T>();
+        protected List<T> _items = new List<T>();
 
         public StubRepository()
         {
