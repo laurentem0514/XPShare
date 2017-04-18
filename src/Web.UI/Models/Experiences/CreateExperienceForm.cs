@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace XPShare.Web.UI.Models.Experiences
 {
@@ -6,5 +7,10 @@ namespace XPShare.Web.UI.Models.Experiences
     {
         [Required]
         public string Description { get; set; }
+
+        [Required(ErrorMessage ="User is required")]
+        public string UserId { get; set; }
+
+        public SelectList Users;
     }
 }

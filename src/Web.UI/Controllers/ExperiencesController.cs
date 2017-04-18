@@ -2,6 +2,7 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using XPShare.Domain.Experiences;
 using XPShare.Web.UI.Models.Experiences;
+using XPShare.Domain.Users;
 
 namespace XPShare.Web.UI.Controllers
 {
@@ -10,9 +11,12 @@ namespace XPShare.Web.UI.Controllers
     {
         private IExperienceRepository _experienceRepository { get; set; }
 
-        public ExperiencesController(IExperienceRepository experienceRepository)
+        private IUserRepository _userRepository { get; set; }
+
+        public ExperiencesController(IExperienceRepository experienceRepository, IUserRepository userRepository)
         {
             _experienceRepository = experienceRepository;
+            _userRepository = userRepository;
         }
 
         [HttpGet("")]
@@ -40,7 +44,9 @@ namespace XPShare.Web.UI.Controllers
         [HttpGet("create")]
         public IActionResult Create()
         {
-            return View(new CreateExperienceForm());
+            var model = new CreateExperienceForm();
+            Populate(model);
+            return View(model);
         }
 
         [HttpPost("create")]
@@ -48,6 +54,7 @@ namespace XPShare.Web.UI.Controllers
         {
             if (!ModelState.IsValid)
             {
+                Populate(form);
                 return View(form);
             }
             var experience = new Experience { Description = form.Description };
@@ -55,6 +62,12 @@ namespace XPShare.Web.UI.Controllers
             _experienceRepository.Add(experience);
 
             return RedirectToAction("Details", new { id = experience.Id });
+        }
+
+        private void Populate(CreateExperienceForm form)
+        {
+            var users = _userRepository.GetAll();
+            form.Users = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(users, nameof(Domain.Users.User.Id), nameof(Domain.Users.User.Name));
         }
     }
 }
