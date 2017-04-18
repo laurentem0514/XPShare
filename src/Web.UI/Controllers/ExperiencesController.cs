@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using XPShare.Domain.Experiences;
+using XPShare.Web.UI.Models.Experiences;
 
 namespace XPShare.Web.UI.Controllers
 {
@@ -37,14 +38,20 @@ namespace XPShare.Web.UI.Controllers
         }
 
         [HttpGet("create")]
-        public IActionResult CreateForm()
+        public IActionResult Create()
         {
-            return View(new Experience());
+            return View(new CreateExperienceForm());
         }
 
         [HttpPost("create")]
-        public IActionResult Create(Experience experience)
+        public IActionResult Create(CreateExperienceForm form)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(form);
+            }
+            var experience = new Experience { Description = form.Description };
+
             _experienceRepository.Add(experience);
 
             return RedirectToAction("Details", new { id = experience.Id });
