@@ -14,11 +14,14 @@
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
     </div>
-    <div>
-        <select asp-for="UserId" asp-items="Model.Users">
-            <option value="">- Select -</option>
-        </select>
-        <span asp-validation-for="UserId" class="text-danger"></span>
+    <div class="form-group">
+        <label asp-for="User" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <select class="form-control" asp-for="UserId" asp-items="Model.Users">
+                <option value="">- Select -</option>
+            </select>
+            <span asp-validation-for="UserId" class="text-danger"></span>
+        </div>
     </div>
     <div class="form-group">
         <div class="col-md-10">

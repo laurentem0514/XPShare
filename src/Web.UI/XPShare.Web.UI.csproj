@@ -7,6 +7,12 @@
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\Scripts\Client.jsx" />
+    <Content Include="wwwroot\Scripts\HelloWorld - Copy.jsx" />
+    <Content Include="wwwroot\Scripts\HelloWorld.jsx" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
@@ -21,6 +27,9 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Scripts\HelloWorld.jsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DependencyInjection\XPShare.DependencyInjection.csproj" />

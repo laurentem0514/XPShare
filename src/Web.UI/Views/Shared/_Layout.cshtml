@@ -42,12 +42,16 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
+        <div id="content"></div>
         <hr />
         <footer>
             <p>&copy; 2017 - XPShare</p>
         </footer>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="@Url.Content("~/Scripts/Client.jsx")"></script>
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -68,6 +72,8 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+
+    @Html.ReactInitJavaScript()
 
     @RenderSection("Scripts", required: false)
     @Html.Partial("_Analytics")

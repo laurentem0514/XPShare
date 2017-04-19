@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using XPShare.Domain.Tags;
+using XPShare.Web.UI.Models.Tags;
 
 namespace XPShare.Web.UI.Controllers
 {
@@ -37,14 +38,16 @@ namespace XPShare.Web.UI.Controllers
         }
 
         [HttpGet("create")]
-        public IActionResult CreateForm()
+        public IActionResult Create()
         {
-            return View(new Tag());
+            var model = new CreateTagForm();
+            return View(model);
         }
 
         [HttpPost("create")]
-        public IActionResult Create(Tag tag)
+        public IActionResult Create(CreateTagForm form)
         {
+            var tag = new Tag { Name = form.Name };
             _tagRepository.Add(tag);
 
             return RedirectToAction("Details", new { id = tag.Id });

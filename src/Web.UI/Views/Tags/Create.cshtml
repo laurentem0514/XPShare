@@ -1,10 +1,12 @@
-@model XPShare.Domain.Projects.Project
-@{
-    ViewData["Title"] = "Create New Project";
+@using XPShare.Web.UI.Models.Tags
+
+@model CreateTagForm
+@{ 
+    ViewData["Title"] = "Create New Tag";
 }
 
-<h2>Create New Project</h2>
-<form asp-controller="Projects" asp-action="Create" method="post" class="form-horizontal">
+<h2>Create New Tag</h2>
+<form asp-controller="Tags" asp-action="Create" method="post" class="form-horizontal">
     <div class="form-group">
         <label asp-for="Name" class="col-md-2 control-label"></label>
         <div class="col-md-10">

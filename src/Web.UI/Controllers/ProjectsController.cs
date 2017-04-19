@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using XPShare.Domain.Projects;
+using XPShare.Web.UI.Models.Projects;
 
 namespace XPShare.Web.UI.Controllers
 {
@@ -37,14 +38,21 @@ namespace XPShare.Web.UI.Controllers
         }
 
         [HttpGet("create")]
-        public IActionResult CreateForm()
+        public IActionResult Create()
         {
-            return View(new Project());
+            var model = new CreateProjectForm();
+            return View(model);
         }
 
         [HttpPost("create")]
-        public IActionResult Create(Project project)
+        public IActionResult Create(CreateProjectForm form)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(form);
+            }
+            var project = new Project { Name = form.Name };
+
             _projectRepository.Add(project);
 
             return RedirectToAction("Details", new { id = project.Id });

@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using XPShare.Domain.Users;
+using XPShare.Web.UI.Models.Users;
 
 namespace XPShare.Web.UI.Controllers
 {
@@ -37,14 +38,16 @@ namespace XPShare.Web.UI.Controllers
         }
 
         [HttpGet("create")]
-        public IActionResult CreateForm()
+        public IActionResult Create()
         {
-            return View(new User());
+            var model = new CreateUserForm();
+            return View(model);
         }
 
         [HttpPost("create")]
-        public IActionResult Create(User user)
+        public IActionResult Create(CreateUserForm form)
         {
+            var user = new User { Name = form.Name };
             _userRepository.Add(user);
 
             return RedirectToAction("Details", new {id = user.Id });
