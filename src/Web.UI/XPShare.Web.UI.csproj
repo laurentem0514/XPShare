@@ -9,9 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot/webpack.config.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\Scripts\Client.jsx" />
+    <Content Include="wwwroot\Scripts\TagsInput.jsx" />
+    <Content Include="wwwroot\Scripts\CommentBox - Copy.jsx" />
+    <Content Include="wwwroot\Scripts\CommentList.jsx" />
     <Content Include="wwwroot\Scripts\HelloWorld - Copy.jsx" />
-    <Content Include="wwwroot\Scripts\HelloWorld.jsx" />
+    <Content Include="wwwroot\Scripts\main.js" />
+    <Content Include="wwwroot\Scripts\other - Copy.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Scripts\other.js" />
+    <None Include="wwwroot/webpack.config.js" />
+    <None Include="wwwroot\webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -27,9 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="wwwroot\Scripts\HelloWorld.jsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DependencyInjection\XPShare.DependencyInjection.csproj" />

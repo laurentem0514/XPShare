@@ -35,7 +35,6 @@ namespace Web.UI
             services.AddMvc();
 
             services.AddServices();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,10 +71,8 @@ namespace Web.UI
                 //config
                 //    .SetLoadBabel(false)
                 //    .AddScriptWithoutTransform("~/Scripts/bundle.server.js");
-                config.AddScript("~/Scripts/HelloWorld.jsx");
+                config.AddScript("~/Scripts/TagsInput.jsx");
             });
-            ReactSiteConfiguration.Configuration = new ReactSiteConfiguration()
-                .AddScript("~/Scripts/HelloWorld.jsx");
 
             app.UseStaticFiles();
 

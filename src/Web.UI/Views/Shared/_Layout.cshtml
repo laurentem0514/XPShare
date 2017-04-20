@@ -41,20 +41,18 @@
         </div>
     </nav>
     <div class="container body-content">
-        @RenderBody()
-        <div id="content"></div>
+        @RenderBody()       
         <hr />
         <footer>
             <p>&copy; 2017 - XPShare</p>
         </footer>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
-    <script src="@Url.Content("~/Scripts/Client.jsx")"></script>
+  
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/react/react.js"></script>
+        <script src="~/lib/react/react-dom.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -70,12 +68,38 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"
+                asp-fallback-src="~/lib/react/react.js"
+                asp-fallback-test="window.React"
+                crossorigin="anonymous"
+                integrity="sha384-bQIyvl+8Ufi5KiKZPG9VItNWmhcAXA1pa5nHIEoBGob+rdbjJnpNV3s288Mz2yZu">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"
+                asp-fallback-src="~/lib/react/react-dom.js"
+                asp-fallback-test="window.ReactDOM"
+                crossorigin="anonymous"
+                integrity="sha384-ZzFfcTbsRst34N23lWs6TtlfonXwDgpeALh+ObwYXav5BSo0j7KsaAtcdn+xrnS1">
+        </script>
+
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+    
+    <script src="@Url.Content("~/Scripts/TagsInput.jsx")"></script>
     @Html.ReactInitJavaScript()
 
     @RenderSection("Scripts", required: false)
     @Html.Partial("_Analytics")
 </body>
 </html>
+
+
+@*react.js integrity: sha384- bQIyvl+8Ufi5KiKZPG9VItNWmhcAXA1pa5nHIEoBGob+rdbjJnpNV3s288Mz2yZu
+    react-dom.js: sha384-ZzFfcTbsRst34N23lWs6TtlfonXwDgpeALh+ObwYXav5BSo0j7KsaAtcdn+xrnS1
+    <script src="https://fb.me/react-0.14.3.min.js"
+            asp-fallback-src="~/Content/js/lib/react-0.14.3.min.js"
+            asp-fallback-test="window.React">
+    </script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"
+            asp-fallback-src="~/Content/js/lib/react-dom-0.14.3.min.js"
+            asp-fallback-test="window.ReactDOM">
+    </script>*@   

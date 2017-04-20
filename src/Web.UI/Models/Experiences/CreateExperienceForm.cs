@@ -11,6 +11,8 @@ namespace XPShare.Web.UI.Models.Experiences
         [Required(ErrorMessage ="User is required")]
         public string UserId { get; set; }
 
+        public string Tags { get; set; }
+
         public SelectList Users;
     }
 }
